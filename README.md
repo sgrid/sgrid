@@ -1,2 +1,2 @@
 # sgrid
-The SGRID conventions document, currently at https://bit.ly/sgrid_cf
+The SGRID conventions document, currently at http://bit.ly/sgrid_cf
