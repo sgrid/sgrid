@@ -1,0 +1,23 @@
+site_name: Staggered Grid data model (SGRID)
+pages:
+  - Home: index.md
+
+theme_dir: readthedocs
+
+site_description: Staggered Grid data model (SGRID)
+site_url: https://sgrid.github.io/sgrid
+repo_url: https://github.com/sgrid/sgrid
+site_author: Bert Jagers, Rich Signell
+site_favicon: favicon.ico
+docs_dir: src
+site_dir: _site
+#copyright:
+markdown_extensions:
+    - toc:
+        permalink: ""
+    - extra
+    - smarty
+    - math
+    - markdown_checklist.extension
+extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML','js/mathjaxhelper.js']
+google_analytics: ['UA-9133259-16', 'sgrid.github.io']
