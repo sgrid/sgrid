@@ -1,2 +1,3 @@
-# sgrid conventions for staggered grid
-The SGRID conventions document, currently at http://bit.ly/sgrid_cf
+# SGRID: Conventions for Staggered Grids
+
+The SGRID conventions document, currently at https://sgrid.github.io/sgrid
