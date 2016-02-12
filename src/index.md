@@ -5,24 +5,22 @@ Bert Jagers created conventions for staggered data on structured grids that are 
 
 ## Introduction
 
-The [CF-conventions](http://cfconventions.org/) are widely used for storing and distributing environmental / earth sciences / climate data.
-The CF-conventions use a data perspective:
-every data value points to the latitude and longitude at which that value has been defined;
-the combination of latitude and longitude bounds and cell methods attributes can be used to define spatially averaged rather than point values.
+The [CF-conventions](http://cfconventions.org/) are widely used for storing and distributing environmental / earth sciences / climate data. The CF-conventions use a data perspective: every data value points to the latitude and longitude at which that value has been defined; the combination of latitude and longitude bounds and cell methods attributes can be used to define spatially averaged rather than point values. 
+
 This is all great for the distribution of (interpolated) data for general visualization and spatial data processing,
-but it doesn't capture the relationship of the variables as computed by a numerical model (such as [Arakawa staggering](http://en.wikipedia.org/wiki/Arakawa_grids)).
-Many models use staggered grids (using finite differences, or finite volume approach) or use a finite element approach of which the correct meaning may not be captured easily by simple cell methods descriptors.
+but it doesn't capture the relationship of the variables as computed by a numerical model (such as [Arakawa staggering](http://en.wikipedia.org/wiki/Arakawa_grids)). Many models use staggered grids (using finite differences, or finite volume approach) or use a finite element approach of which the correct meaning may not be captured easily by simple cell methods descriptors.
 This becomes a problem if you don't want to just look at the big picture of the model results,
-but also at the details at the grid resolution e.g. what is the exact meaning of a flux on the output file in discrete terms?
-Can we verify the mass balance?
-Can the data be used for restarting the model?
-Correctly handling the staggered data has always been a crucial element of the Delft3D post-processing tools.
-In the UGRID conventions, we have defined the (unstructured) grid as a separate entity on the file which consists of nodes and connections of nodes defining edges, faces, and volumes.
-For a structured (staggered) grid we are currently lacking a consistent convention.
-Although one could store structured grid data using UGRID conventions,
+but also at the details at the grid resolution:
+* What is the exact meaning of a flux on the output file in discrete terms?
+* Can we verify the mass balance?
+* Can the data be used for restarting the model?
+
+Correctly handling the staggered data has always been a crucial element of model post-processing tools. In the UGRID conventions, we have defined the (unstructured) grid as a separate entity on the file which consists of nodes and connections of nodes defining edges, faces, and volumes.
+For a structured (staggered) grid we are currently lacking a consistent convention. Although one could store structured grid data using UGRID conventions,
 some fundamental aspects such as distinction between grid directions would be lost.
-In this context I propose the lightweight SGRID conventions to define the core aspects of a structured staggered grid without trying to capture the details of finite element formulations.
-This proposal serves merely the purpose of getting the conventions for structured grids on par with those for unstructured grids.
+
+In this context we have created these lightweight SGRID conventions to define the core aspects of a structured staggered grid without trying to capture the details of finite element formulations.
+This is an attempt to bring conventions for structured grids on par with those for unstructured grids.
 
 ## Conventions
 
