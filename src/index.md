@@ -1,8 +1,7 @@
 # SGRID Conventions (v0.1)
 
-Following the successful discussion that we had a few year's ago on conventions for storing unstructured grid data in netCDF files which eventually led to the [UGRID conventions](https://github.com/ugrid-conventions/ugrid-conventions),
-I would like to propose a simple convention for documenting staggered data on structured grids that is consistent with the UGRID conventions.
-My proposal, which I will refer to as SGRID convention, is described below.
+Following the success of the [UGRID conventions](https://github.com/ugrid-conventions/ugrid-conventions),
+Bert Jagers created the initial version of these simple conventions for documenting staggered data on structured grids that is consistent with the UGRID conventions.  We refer to these as the SGRID conventions, described below.
 
 ## Introduction
 
@@ -25,7 +24,7 @@ some fundamental aspects such as distinction between grid directions would be lo
 In this context I propose the lightweight SGRID conventions to define the core aspects of a structured staggered grid without trying to capture the details of finite element formulations.
 This proposal serves merely the purpose of getting the conventions for structured grids on par with those for unstructured grids.
 
-## Proposal
+## Conventions
 
 Consistent with the UGRID conventions we use the following terms for points,
 lines, and cells that make up a grid.
