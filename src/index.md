@@ -1,4 +1,4 @@
-# Deltares proposal for Staggered Grid data model (SGRID)
+# SGRID Conventions (v0.1)
 
 Following the successful discussion that we had a few year's ago on conventions for storing unstructured grid data in netCDF files which eventually led to the [UGRID conventions](https://github.com/ugrid-conventions/ugrid-conventions),
 I would like to propose a simple convention for documenting staggered data on structured grids that is consistent with the UGRID conventions.
