@@ -57,7 +57,7 @@ Still we need to distinguish between 2D and 3D grids (1D conventions may be defi
 |edge2_coordinates            |                                                                                                    |
 |edge1_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*)                                   |
 |edge1_coordinates            |                                                                                                    |
-|cf_role                      |mesh_topology                                                                                       |
+|cf_role                      |grid_topology                                                                                       |
 
 where the padding type may be one of the four literal strings:
 "none", "low", "high", or "both" depending on whether the face_dimension is one shorter than the corresponding node_dimension (padding:none),
@@ -134,7 +134,7 @@ variables:
 |face3_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                   |
 |edge1_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 node_dimension3                                                                     |
 |face2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                   |
-|cf_role                      |mesh_topology                                                                                                                                         |
+|cf_role                      |grid_topology                                                                                                                                         |
 |edge2_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                                                     |
 |edge3_dimensions             |node_dimension1 node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                                                     |
 |node_dimensions              |node_dimension1 node_dimension2 node_dimension3                                                                                                       |
