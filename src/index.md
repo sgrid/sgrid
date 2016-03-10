@@ -128,19 +128,18 @@ variables:
 
 |Required topology attributes |Value                                                                                                                                                 |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-|topology_dimension           | 3                                                                                                                                                    |
+|cf_role                      |grid_topology                                                                                       |
+|topology_dimension           | 3                                                                                                    |node_dimensions              |node_dimension1 node_dimension2 node_dimension3  
+|volume_dimensions            |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) face_dimension3:node_dimension3 (padding:*type3*) |
 
 |Optional attributes          |Default value                                                                                                                                         |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-|volume_dimensions            |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) face_dimension3:node_dimension3 (padding:*type3*) |
-|face3_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                   |
 |edge1_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 node_dimension3                                                                     |
-|face2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                   |
-|cf_role                      |grid_topology                                                                                                                                         |
 |edge2_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                                                     |
 |edge3_dimensions             |node_dimension1 node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                                                     |
-|node_dimensions              |node_dimension1 node_dimension2 node_dimension3                                                                                                       |
 |face1_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*) face_dimension3:node_dimension3 (padding:*type3*)                                   |
+|face2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                   |
+|face3_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                   |
 |node_coordinates             |                                                                                                                                                      |
 |edge*i*_coordinates          |                                                                                                                                                      |
 |face*i*_coordinates          |                                                                                                                                                      |
