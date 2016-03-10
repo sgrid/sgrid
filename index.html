@@ -73,7 +73,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#sgrid-conventions-v02">SGRID Conventions (v0.2)</a></li>
+                <li class="toctree-l3"><a href="#sgrid-conventions-v03">SGRID Conventions (v0.3)</a></li>
                 
                     <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
                 
@@ -125,7 +125,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sgrid-conventions-v02">SGRID Conventions (v0.2)<a class="headerlink" href="#sgrid-conventions-v02" title="Permanent link"></a></h1>
+                <h1 id="sgrid-conventions-v03">SGRID Conventions (v0.3)<a class="headerlink" href="#sgrid-conventions-v03" title="Permanent link"></a></h1>
 <p>Following the success of the <a href="https://github.com/ugrid-conventions/ugrid-conventions">UGRID conventions</a>,
 Bert Jagers created conventions for staggered data on structured grids that are consistent with the UGRID conventions.
 We refer to these as the SGRID conventions, described below.</p>
@@ -191,12 +191,20 @@ Still we need to distinguish between 2D and 3D grids (1D conventions may be defi
 </thead>
 <tbody>
 <tr>
-<td>vertical_dimensions</td>
-<td></td>
+<td>cf_role</td>
+<td>grid_topology</td>
 </tr>
 <tr>
 <td>topology_dimension</td>
 <td>2</td>
+</tr>
+<tr>
+<td>node_dimensions</td>
+<td>node_dimension1 node_dimension2</td>
+</tr>
+<tr>
+<td>face_dimensions</td>
+<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) face_dimension2:node_dimension2 (padding:<em>type2</em>)</td>
 </tr>
 </tbody>
 </table>
@@ -209,40 +217,36 @@ Still we need to distinguish between 2D and 3D grids (1D conventions may be defi
 </thead>
 <tbody>
 <tr>
-<td>node_dimensions</td>
-<td>node_dimension1 node_dimension2</td>
-</tr>
-<tr>
-<td>node_coordinates</td>
-<td></td>
-</tr>
-<tr>
-<td>face_dimensions</td>
-<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) face_dimension2:node_dimension2 (padding:<em>type2</em>)</td>
-</tr>
-<tr>
-<td>face_coordinate</td>
-<td></td>
+<td>edge1_dimensions</td>
+<td>node_dimension1 face_dimension2:node_dimension2 (padding:<em>type2</em>)</td>
 </tr>
 <tr>
 <td>edge2_dimensions</td>
 <td>face_dimension1:node_dimension1 (padding:<em>type1</em>) node_dimension2</td>
 </tr>
 <tr>
-<td>edge2_coordinates</td>
+<td>node_coordinates</td>
 <td></td>
-</tr>
-<tr>
-<td>edge1_dimensions</td>
-<td>node_dimension1 face_dimension2:node_dimension2 (padding:<em>type2</em>)</td>
 </tr>
 <tr>
 <td>edge1_coordinates</td>
 <td></td>
 </tr>
 <tr>
-<td>cf_role</td>
-<td>grid_topology</td>
+<td>edge2_coordinates</td>
+<td></td>
+</tr>
+<tr>
+<td>face_coordinate</td>
+<td></td>
+</tr>
+<tr>
+<td>vertical_dimensions</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -315,8 +319,20 @@ variables:
 </thead>
 <tbody>
 <tr>
+<td>cf_role</td>
+<td>grid_topology</td>
+</tr>
+<tr>
 <td>topology_dimension</td>
 <td>3</td>
+</tr>
+<tr>
+<td>node_dimensions</td>
+<td>node_dimension1 node_dimension2 node_dimension3</td>
+</tr>
+<tr>
+<td>volume_dimensions</td>
+<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) face_dimension2:node_dimension2 (padding:<em>type2</em>) face_dimension3:node_dimension3 (padding:<em>type3</em>)</td>
 </tr>
 </tbody>
 </table>
@@ -329,24 +345,8 @@ variables:
 </thead>
 <tbody>
 <tr>
-<td>volume_dimensions</td>
-<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) face_dimension2:node_dimension2 (padding:<em>type2</em>) face_dimension3:node_dimension3 (padding:<em>type3</em>)</td>
-</tr>
-<tr>
-<td>face3_dimensions</td>
-<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) face_dimension2:node_dimension2 (padding:<em>type2</em>) node_dimension3</td>
-</tr>
-<tr>
 <td>edge1_dimensions</td>
 <td>face_dimension1:node_dimension1 (padding:<em>type1</em>) node_dimension2 node_dimension3</td>
-</tr>
-<tr>
-<td>face2_dimensions</td>
-<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) node_dimension2 face_dimension3:node_dimension3 (padding:<em>type3</em>)</td>
-</tr>
-<tr>
-<td>cf_role</td>
-<td>grid_topology</td>
 </tr>
 <tr>
 <td>edge2_dimensions</td>
@@ -357,23 +357,27 @@ variables:
 <td>node_dimension1 node_dimension2 face_dimension3:node_dimension3 (padding:<em>type3</em>)</td>
 </tr>
 <tr>
-<td>node_dimensions</td>
-<td>node_dimension1 node_dimension2 node_dimension3</td>
-</tr>
-<tr>
 <td>face1_dimensions</td>
 <td>node_dimension1 face_dimension2:node_dimension2 (padding:<em>type2</em>) face_dimension3:node_dimension3 (padding:<em>type3</em>)</td>
+</tr>
+<tr>
+<td>face2_dimensions</td>
+<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) node_dimension2 face_dimension3:node_dimension3 (padding:<em>type3</em>)</td>
+</tr>
+<tr>
+<td>face3_dimensions</td>
+<td>face_dimension1:node_dimension1 (padding:<em>type1</em>) face_dimension2:node_dimension2 (padding:<em>type2</em>) node_dimension3</td>
 </tr>
 <tr>
 <td>node_coordinates</td>
 <td></td>
 </tr>
 <tr>
-<td>edge<em>i</em>_coordinates</td>
+<td>edge <em>i</em>_coordinates</td>
 <td></td>
 </tr>
 <tr>
-<td>face<em>i</em>_coordinates</td>
+<td>face <em>i</em>_coordinates</td>
 <td></td>
 </tr>
 <tr>
@@ -740,5 +744,5 @@ variables:
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-03-04 18:29:30.665267
+Build Date UTC : 2016-03-10 19:15:23.569003
 -->
