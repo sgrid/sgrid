@@ -141,8 +141,8 @@ variables:
 |face2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                   |
 |face3_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                   |
 |node_coordinates             |                                                                                                                                                      |
-|edge*i*_coordinates          |                                                                                                                                                      |
-|face*i*_coordinates          |                                                                                                                                                      |
+|edge *i*_coordinates          |                                                                                                                                                      |
+|face *i*_coordinates          |                                                                                                                                                      |
 |volume_coordinates           |                                                                                                                                                      |
 
 Notes:
