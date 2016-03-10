@@ -1,4 +1,4 @@
-# SGRID Conventions (v0.2)
+# SGRID Conventions (v0.3)
 
 Following the success of the [UGRID conventions](https://github.com/ugrid-conventions/ugrid-conventions),
 Bert Jagers created conventions for staggered data on structured grids that are consistent with the UGRID conventions.
