@@ -1,4 +1,4 @@
-# SGRID Conventions (v0.2)
+# SGRID Conventions (v0.3)
 
 Following the success of the [UGRID conventions](https://github.com/ugrid-conventions/ugrid-conventions),
 Bert Jagers created conventions for staggered data on structured grids that are consistent with the UGRID conventions.
@@ -45,20 +45,21 @@ Still we need to distinguish between 2D and 3D grids (1D conventions may be defi
 
 |Required topology attributes |Value                                                                                               |
 |-----------------------------|----------------------------------------------------------------------------------------------------|
-|vertical_dimensions          |                                                                                                    |
+|cf_role                      |grid_topology                                                                                       |
 |topology_dimension           | 2                                                                                                  |
+|node_dimensions              |node_dimension1 node_dimension2                                                                     |
+|face_dimensions              |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) |
 
 |Optional attributes          |Default value                                                                                       |
 |-----------------------------|----------------------------------------------------------------------------------------------------|
-|node_dimensions              |node_dimension1 node_dimension2                                                                     |
-|node_coordinates             |                                                                                                    |
-|face_dimensions              |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) |
-|face_coordinate              |                                                                                                    |
-|edge2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2                                   |
-|edge2_coordinates            |                                                                                                    |
 |edge1_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*)                                   |
-|edge1_coordinates            |                                                                                                    |
-|cf_role                      |grid_topology                                                                                       |
+|edge2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2                                   |
+|node_coordinates             |                                                                                                    |
+|edge1_coordinates            |         
+|edge2_coordinates            |                                                                                                    |
+|face_coordinate              |                                                                                                    |
+|vertical_dimensions          |                                                                                                    |
+                                                                                           |
 
 where the padding type may be one of the four literal strings:
 "none", "low", "high", or "both" depending on whether the face_dimension is one shorter than the corresponding node_dimension (padding:none),
@@ -127,22 +128,22 @@ variables:
 
 |Required topology attributes |Value                                                                                                                                                 |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-|topology_dimension           | 3                                                                                                                                                    |
+|cf_role                      |grid_topology             |
+|topology_dimension           | 3                        | 
+|node_dimensions              |node_dimension1 node_dimension2 node_dimension3  |
+|volume_dimensions            |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) face_dimension3:node_dimension3 (padding:*type3*) |
 
 |Optional attributes          |Default value                                                                                                                                         |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-|volume_dimensions            |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) face_dimension3:node_dimension3 (padding:*type3*) |
-|face3_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                   |
 |edge1_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 node_dimension3                                                                     |
-|face2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                   |
-|cf_role                      |grid_topology                                                                                                                                         |
 |edge2_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                                                     |
 |edge3_dimensions             |node_dimension1 node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                                                     |
-|node_dimensions              |node_dimension1 node_dimension2 node_dimension3                                                                                                       |
 |face1_dimensions             |node_dimension1 face_dimension2:node_dimension2 (padding:*type2*) face_dimension3:node_dimension3 (padding:*type3*)                                   |
+|face2_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) node_dimension2 face_dimension3:node_dimension3 (padding:*type3*)                                   |
+|face3_dimensions             |face_dimension1:node_dimension1 (padding:*type1*) face_dimension2:node_dimension2 (padding:*type2*) node_dimension3                                   |
 |node_coordinates             |                                                                                                                                                      |
-|edge*i*_coordinates          |                                                                                                                                                      |
-|face*i*_coordinates          |                                                                                                                                                      |
+|edge *i*_coordinates          |                                                                                                                                                      |
+|face *i*_coordinates          |                                                                                                                                                      |
 |volume_coordinates           |                                                                                                                                                      |
 
 Notes:
