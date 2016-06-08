@@ -1,0 +1,37 @@
+permalink: /:year/:month/:day/:title/
+url: http://sgrid.github.io
+name: SGRID
+baseurl: /sgrid
+topnav_title: Staggered Grid data model (SGRID)
+site_title: Staggered Grid data model (SGRID)
+description: Staggered Grid data model (SGRID)
+github_editme_path: sgrid/sgrid
+repository: https://github.com/sgrid/sgrid
+relative_permalinks: false
+google_analytics_id: UA-9133259-16
+permalink: pretty
+
+exclude:
+  - _site
+
+feedback_email: ocefpaf@gmail.com
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+
+collections:
+  tooltips:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
