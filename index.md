@@ -17,6 +17,7 @@ This is all great for the distribution of (interpolated) data for general visual
 but it doesn't capture the relationship of the variables as computed by a numerical model (such as [Arakawa staggering](http://en.wikipedia.org/wiki/Arakawa_grids)). Many models use staggered grids (using finite differences, or finite volume approach) or use a finite element approach of which the correct meaning may not be captured easily by simple cell methods descriptors.
 This becomes a problem if you don't want to just look at the big picture of the model results,
 but also at the details at the grid resolution:
+
 * What is the exact meaning of a flux on the output file in discrete terms?
 * Can we verify the mass balance?
 * Can the data be used for restarting the model?
