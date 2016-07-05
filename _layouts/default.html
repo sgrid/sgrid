@@ -58,19 +58,14 @@
 <!-- Page Content -->
 <div class="container">
     <div class="col-lg-12">&nbsp;</div>
-    <!-- Content Row -->
     <div class="row">
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-
-          {% include sidebar.html %}
-    <!-- Content Column -->
-    <div class="col-md-9">
+      <div class="col-md-3">{% include toc.html %}</div>
+      <!-- Content Column -->
+      <div class="col-md-9">
         {{content}}
+      </div>
     </div>
-    <!-- /.row -->
 </div>
-<!-- /.container -->
     </div>
     <script>
     jQuery(function ($) {
