@@ -239,7 +239,7 @@ double waterlevel(time,j,i) ;
 
 ### Delft3D
 
-Delft3D uses an Arikawa C-grid with the water level (pressure) computed in the cell centres,
+Delft3D uses an Arakawa C-grid with the water level (pressure) computed in the cell centres,
 and the normal velocities at the cell edges.
 This example shows the use of asymmetric padding (at the low end of the horizontal coordinate indices there is an extra line of face/mid-point values).
 In the vertical there is no padding, so the number of layer interfaces is one more than the number of layers.
